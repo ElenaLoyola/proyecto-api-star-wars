@@ -1,0 +1,168 @@
+.contenedor {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.titulo {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+section {
+    display: flex;
+    width: 100%;
+}
+.numeros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding-bottom: 30px;
+    width: 10%;
+}
+.contenido {
+    border-left: 4px solid rgb(231, 231, 231);
+    padding-left: 25px;
+    padding-bottom: 30px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.contenido::after {
+    content: '';
+    position: absolute;
+    left: -1%;
+    top: 41%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgb(241 196 15);
+}
+.caja, .seccion {
+    width: 25%;
+    border-radius: 5px;
+    box-shadow: 0px 5px 12px gray;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-right: 15px;
+    height: fit-content;
+}
+.caja {
+    animation-name: mover;
+    animation-duration: 2s;
+}
+@keyframes mover {
+    0% {
+        transform: rotate(0deg);
+        left: 0px;
+    }
+    25% {
+        transform: rotate(20deg);
+        left: 0px;
+    }
+    50% {
+        transform: rotate(0deg);
+        left: 500px;
+    }
+    55% {
+        transform: rotate(0deg);
+        left: 500px;
+    }
+    70% {
+        transform: rotate(0deg);
+        left: 500px;
+        color: blue;
+    }
+    100% {
+        transform: rotate(0deg);
+        left: 0px;
+    }
+}
+
+.dot1, .dot2, .dot3 {
+    height: 30px;
+    width: 30px;
+    background-color: #fa8072;
+    border-radius: 50%;
+    display: flex;
+}
+.dot2 {
+    background-color: #90ee90;
+}
+.dot3 {
+    background-color: #87cefa;
+}
+.info {
+    padding-left: 15px;
+    width: 100%;
+}
+.info h4 {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.info p {
+    margin: 0px;
+    font-size: 12px;
+}
+/* Dispositivos extra pequeños (teléfonos, 600px y menos) */ 
+@media only screen and (max-width: 600px) {
+    .contenedor {
+        width: 100%;
+    }
+    .titulo {
+        width: 90%;
+        font-size: 14px;
+    }
+    .numeros {
+        width: 15%;
+    }
+    .contenido {
+        flex-direction: column;
+        width: 85%;
+    }
+    .contenido::after {
+        display: none;
+    }
+    .caja, .seccion {
+        width: 90%;
+    }
+}
+/* Dispositivos pequeños (tablets verticales y teléfonos grandes, 601px a 768px) */ 
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .contenedor {
+        width: 90%;
+    }
+    .titulo {
+        width: 90%;
+        font-size: 14px;
+    }
+    .numeros {
+        width: 15%;
+    }
+    .contenido {
+        flex-direction: column;
+        width: 85%;
+    }
+    .contenido::after {
+        display: none;
+    }
+    .caja, .seccion {
+        width: 90%;
+    }
+} 
+/* Dispositivos medianos (tablets horizontales, 769px a 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .contenedor {
+        width: 90%;
+    }
+    .caja, .seccion {
+        width: 40%;
+    }
+    .contenido::after {
+        display: none;
+    }
+} 
